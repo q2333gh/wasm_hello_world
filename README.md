@@ -54,10 +54,12 @@ RISC-V Assembly:
 addi t0, t0, 1
 ```
 
-# Why wasm?
+## dynamic memory allocation  on wasm ?  (like `malloc()`)
+
+## Why wasm?
 Performance code on browser
 #### How good performance is it compare to C ? 
 likely 90% or 45% to 55% runtime speed of C ? https://www.usenix.org/conference/atc19/presentation/jangda
-At least same exponential ,good~
+At least same exponential ,good~  
 
-# Any cool web3D with wasm?
+## Any cool web3D with wasm?
