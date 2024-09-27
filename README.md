@@ -59,7 +59,7 @@ addi t0, t0, 1
 ## Why wasm?
 Performance code on browser or outside browser(even cooler😎)!
 https://webassembly.org/docs/use-cases/
-## But , why sue wasm outside broswer ? not pure C, rust ?
+## But , why use wasm outside broswer ? not pure C, rust ?
 gen by AI:
 Comparison
 Portability: Wasm is more portable than Rust and C++ as it can run on any platform with a Wasm runtime1.
