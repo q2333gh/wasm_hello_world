@@ -13,7 +13,11 @@
     <script>
       async function loadWasm() {
         try {
-          const response = await fetch("factorial.wasm");
+          //  /  means root folder of main svelte.
+          //  /static is also ok.
+          const wasmPath = new URL("/factorial.wasm", window.location.href).href;
+          console.log("Absolute path for fetch:", wasmPath);
+          const response = await fetch("/factorial.wasm");
           if (!response.ok) {
             throw new Error(
               `Failed to fetch WebAssembly file: ${response.statusText}`

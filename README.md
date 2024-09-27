@@ -57,9 +57,17 @@ addi t0, t0, 1
 ## dynamic memory allocation  on wasm ?  (like `malloc()`)
 
 ## Why wasm?
-Performance code on browser
+Performance code on browser or outside browser(even cooler😎)!
+https://webassembly.org/docs/use-cases/
+## But , why sue wasm outside broswer ? not pure C, rust ?
+gen by AI:
+Comparison
+Portability: Wasm is more portable than Rust and C++ as it can run on any platform with a Wasm runtime1.
+Security: Wasm provides a sandboxed environment, enhancing security, while Rust offers memory safety through its ownership system13.
+Performance: All three options offer high performance, but Rust and C++ provide more control over system resources46.
+Use Cases: Wasm is suitable for cross-platform applications, while Rust and C++ are better for systems programming and performance-critical applications236.
 #### How good performance is it compare to C ? 
 likely 90% or 45% to 55% runtime speed of C ? https://www.usenix.org/conference/atc19/presentation/jangda
-At least same exponential ,good~  
+At least same exponential perf level , good~  
 
 ## Any cool web3D with wasm?

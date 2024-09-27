@@ -1,5 +1,5 @@
 #include <stdint.h>
-// What this?
+// Whats this?
 // simulate cpu intensive ops running by wasm.
 
 // Usage ? 
@@ -7,6 +7,7 @@
 // Something i dont figure out yet.Maybe doc can tell : becareful the name for cc file of c function : _factorial. when using it . still call factorial in js(or other caller) .
 
 //# on linux : wasmtime run factorial.wasm --invoke factorial 10
+//              FIXME no return print yet.
 //# on browser: goto on_browser_folder, 
 //              for example: using vscode live share to make it work~
 
