@@ -7,7 +7,7 @@
 // becareful the name for cc file of c function : _factorial. when using it . still call factorial in js(or other caller) .
 
 //# on linux : wasmtime run factorial.wasm --invoke factorial 10
-//# on browser: goto on_browser_folder
+//# on browser: goto on_browser_folder, using vscode live share to make it work~
 
 
 extern "C" {

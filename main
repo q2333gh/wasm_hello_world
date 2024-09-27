@@ -1,0 +1,43 @@
+#!/usr/bin/env python3
+
+import subprocess
+import shutil
+
+def compile_code():
+    # Define the command
+    compile = [
+        'emcc',
+        '-O3',
+        'factorial.cc',
+        '-o',
+        'factorial.wasm',
+        '-s',
+        'EXPORTED_FUNCTIONS=["_factorial"]',
+        '--no-entry'
+    ]
+
+    # Run the command with error checking
+    try:
+        result = subprocess.run(compile, check=True, capture_output=True, text=True)
+        print("Compilation successful!")
+        print(result.stdout)
+        return True
+    except subprocess.CalledProcessError as e:
+        print("Compilation failed!")
+        print(e.stderr)
+        return False
+
+def copy_file():
+    try:
+        shutil.copy('./factorial.wasm', 'on_browser_env/')
+        print("File copied successfully!")
+    except FileNotFoundError as e:
+        print("File copy failed!")
+        print(e)
+
+def main():
+    if compile_code():
+        copy_file()
+
+if __name__ == "__main__":
+    main()
