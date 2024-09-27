@@ -35,9 +35,40 @@ def copy_file_to_browser_env():
         print("File copy failed!")
         print(e)
 
+def run_wasm():
+    try:
+        result = subprocess.run(['wasmtime', 'run', 'factorial.wasm', '--invoke', 'factorial', '10'], check=True, capture_output=True, text=True)
+        print("WASM run successful!")
+        print(result.stdout)
+    except subprocess.CalledProcessError as e:
+        print("WASM run failed!")
+        print(e.stderr)
+
+def wasm_to_txt():
+    try:
+        result = subprocess.run(['wasm-objdump', '-x', 'factorial.wasm'], check=True, capture_output=True, text=True)
+        with open('dump.txt', 'w') as f:
+            f.write(result.stdout)
+        print("WASM to TXT conversion successful!")
+    except subprocess.CalledProcessError as e:
+        print("WASM to TXT conversion failed!")
+        print(e.stderr)
+
+def wasm_to_wat():
+    try:
+        result = subprocess.run(['wasm2wat', 'factorial.wasm', '-o', 'factorial.wat'], check=True, capture_output=True, text=True)
+        print("WASM to WAT conversion successful!")
+        print(result.stdout)
+    except subprocess.CalledProcessError as e:
+        print("WASM to WAT conversion failed!")
+        print(e.stderr)
+
 def main():
     if compile_code():
         copy_file_to_browser_env()
+        run_wasm()
+        wasm_to_txt()
+        wasm_to_wat()
 
 if __name__ == "__main__":
     main()

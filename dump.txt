@@ -1,0 +1,43 @@
+
+factorial.wasm:	file format wasm 0x1
+
+Section Details:
+
+Type[5]:
+ - type[0] () -> i32
+ - type[1] () -> nil
+ - type[2] (i32) -> i64
+ - type[3] (i32) -> nil
+ - type[4] (i32) -> i32
+Function[6]:
+ - func[0] sig=1 <_initialize>
+ - func[1] sig=2 <factorial>
+ - func[2] sig=0 <stackSave>
+ - func[3] sig=3 <stackRestore>
+ - func[4] sig=4 <stackAlloc>
+ - func[5] sig=0 <__errno_location>
+Table[1]:
+ - table[0] type=funcref initial=2 max=2
+Memory[1]:
+ - memory[0] pages: initial=256 max=256
+Global[1]:
+ - global[0] i32 mutable=1 - init i32=5243920
+Export[8]:
+ - memory[0] -> "memory"
+ - func[1] <factorial> -> "factorial"
+ - func[0] <_initialize> -> "_initialize"
+ - table[0] -> "__indirect_function_table"
+ - func[5] <__errno_location> -> "__errno_location"
+ - func[2] <stackSave> -> "stackSave"
+ - func[3] <stackRestore> -> "stackRestore"
+ - func[4] <stackAlloc> -> "stackAlloc"
+Elem[1]:
+ - segment[0] flags=0 table=0 count=1 - init i32=1
+  - elem[1] = func[0] <_initialize>
+Code[6]:
+ - func[0] size=3 <_initialize>
+ - func[1] size=47 <factorial>
+ - func[2] size=4 <stackSave>
+ - func[3] size=6 <stackRestore>
+ - func[4] size=16 <stackAlloc>
+ - func[5] size=5 <__errno_location>
