@@ -1,7 +1,7 @@
 ## My Webassembly learning repo.  
 Might help you with some info about wasm.  
 Feel free to try it yourself~  
-Run `./main` to compile 
+Run `./main`(python code) to compile 
 
 
 ## Tools around Webassembly
