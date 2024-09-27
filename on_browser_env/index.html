@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>WASM Factorial</title>
+  </head>
+  <body>
+    <h1>WebAssembly Factorial</h1>
+    <input type="number" id="number" value="10" />
+    <button onclick="calculateFactorial()">Calculate Factorial</button>
+    <p>Result: <span id="result"></span></p>
+
+    <script>
+      async function loadWasm() {
+        try {
+          const response = await fetch("factorial.wasm");
+          if (!response.ok) {
+            throw new Error(
+              `Failed to fetch WebAssembly file: ${response.statusText}`
+            );
+          }
+          const buffer = await response.arrayBuffer();
+          const module = await WebAssembly.compile(buffer);
+          const instance = await WebAssembly.instantiate(module);
+
+          console.log("Available functions:", Object.keys(instance.exports));
+
+          // Return the exported functions
+          return instance.exports;
+        } catch (error) {
+          console.error("Error loading WebAssembly:", error);
+          throw error;
+        }
+      }
+
+      async function calculateFactorial() {
+        const number = document.getElementById("number").value;
+        const wasm = await loadWasm();
+        const result = wasm.factorial(number);
+        document.getElementById("result").innerText = result;
+      }
+    </script>
+  </body>
+</html>
