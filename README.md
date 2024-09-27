@@ -1,10 +1,10 @@
-## My Webassembly learning repo.  
+## My WebAssembly learning repo.  
 Might help you with some info about wasm.  
 Feel free to try it yourself~  
 Run `./main`(python code) to compile 
 
 
-## Tools around Webassembly
+## Tools around WebAssembly
 #### compile tool: `emcc`  compile ( .c .cc ) to .wasm
 Installation: assume you are using ubuntu: `sudo apt-get install emscripten`
 sample usage: `emcc -O3 factorial.cc -o factorial.wasm -s EXPORTED_FUNCTIONS='["_factorial"]' --no-entry`
